@@ -36,10 +36,14 @@
     "expected_bytes": "00 00 80 44",
     "replacement_bytes": "00 00 00 45"
   },
-  "qualification": "Atlas-only enlargement resolves the reported 4K reproduction with 16 NPCs plus the manually toggled camera. RED4ext confirms the two atlas constants were patched, and the camera remains under StealthMappins_VirtualWindow across repeated untag/retag operations. This validates this reproduction, not every device type, scene, resolution, or future game build.",
+  "qualification": "Atlas-only enlargement resolves the reported 4K reproduction with 16 NPCs plus the manually toggled camera. RED4ext confirms the two atlas constants were patched, and the camera remains under StealthMappins_VirtualWindow across repeated untag/retag operations. This validates this reproduction, not every entity type, scene, resolution, or future game build.",
   "validation": {
     "4K_unpatched": "17th internal tag can strand the marker in WorldMappins_QueueHolder",
     "1080p_unpatched": "16 NPCs plus camera remain under StealthMappins_VirtualWindow across repeated untag/retag",
     "4K_patched": "RED4ext confirms atlas-only patch; 16 NPCs plus camera remain under StealthMappins_VirtualWindow across repeated untag/retag; user confirmed visible behavior"
-  }
+  },
+  "affected_entity_types": [
+    "NPCs (including enemies)",
+    "devices"
+  ]
 }

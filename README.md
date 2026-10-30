@@ -2,7 +2,7 @@
 
 A small, standalone RED4ext plugin for the resolution-dependent tagging-marker bug in Cyberpunk 2077.
 
-At 4K, an entity can remain highlighted through walls while its tag arrow disappears. The game still considers the entity tagged, but its marker can become stranded in `WorldMappins_QueueHolder`. This plugin enlarges the native Stealth marker atlas from **1024 x 1024** to **2048 x 2048**.
+The bug can affect **NPCs (including enemies) and devices**. At 4K, tagged entities can remain highlighted through walls while their tag arrows disappear, and manual tagging and untagging may stop working correctly. The game still considers the entity tagged, but its marker can become stranded in `WorldMappins_QueueHolder`. This plugin enlarges the native Stealth marker atlas from **1024 x 1024** to **2048 x 2048**.
 
 The game's request for **32 marker slots** is unchanged. This is an atlas-capacity fix, not unlimited tagging.
 
@@ -70,7 +70,7 @@ The integration tests run the actual DLL against a synthetic image in the test's
 
 ## Validation and limits
 
-The original reproduction used 16 automatically tagged NPCs plus one manually tagged camera:
+Both NPCs and devices can be affected. The detailed trace below documents a camera example; it does not mean the bug is limited to devices. That reproduction used 16 automatically tagged NPCs plus one manually tagged camera:
 
 | Configuration | Observed camera behavior |
 | --- | --- |
@@ -78,7 +78,7 @@ The original reproduction used 16 automatically tagged NPCs plus one manually ta
 | 1920 x 1080, original atlas | Marker returns to the visible Stealth window |
 | 3840 x 2160, enlarged atlas | Repeated untag/retag works; trace confirms the visible Stealth window |
 
-This verifies that reproduction. It does not establish compatibility with every scene, device, resolution or game update. The separate standard-marker atlas and native tagging logic are unchanged. The requested Stealth marker count remains 32.
+This verifies that reproduction. It does not establish compatibility with every scene, entity type, resolution or game update. The separate standard-marker atlas and native tagging logic are unchanged. The requested Stealth marker count remains 32.
 
 ## Project layout
 

@@ -2,6 +2,8 @@
 
 ## Observed failure
 
+The ghost-tag bug affects NPCs (including enemies) as well as devices. The camera-specific observations below describe the traced reproduction, rather than a restriction to one entity type.
+
 The internal tag list and native `IsTaggedinFocusMode` flags can both contain 17 tagged entities. The camera's Stealth controller also reports a visible tag widget, nonzero scale and opacity 1.0. In the failing 4K reproduction, the root widget instead remains parented to `WorldMappins_QueueHolder` after a manual untag/retag. Its intended visible parent is `StealthMappins_VirtualWindow`.
 
 The same test at 1920 x 1080 works without removing an NPC tag. At 3840 x 2160, enlarging only the Stealth atlas restores repeated manual tagging. This identifies atlas exhaustion as the cause of the reported reproduction, rather than a fixed limit of 16 internally stored tags.
