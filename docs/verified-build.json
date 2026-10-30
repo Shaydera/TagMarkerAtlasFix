@@ -1,0 +1,45 @@
+{
+  "status": "4k-atlas-only-patch-confirmed-in-reported-reproduction",
+  "exe_sha256": "d36e74c47592e9c656ae250078cb40b2be63c782af5bfbeff2280d43e653fab4",
+  "pe_timestamp": "0x6ad55daf",
+  "signature": "c7 45 67 00 00 80 44 c7 45 6b 00 00 80 44 c7 45 6f 00 00 80 43 c7 45 73 00 00 80 43",
+  "signature_matches_rva": [
+    "0x221352e"
+  ],
+  "stealth_virtual_window_logical_size": [
+    3840,
+    2160
+  ],
+  "stealth_atlas_pixels": [
+    1024,
+    1024
+  ],
+  "stealth_tile_logical_size": [
+    256,
+    256
+  ],
+  "requested_slots": 32,
+  "native_paths": {
+    "stealth_pool_parameters_rva": "0x2213510",
+    "create_atlas_pool_rva": "0x4804dc",
+    "tile_allocation_rva": "0x5eb480",
+    "allocation_failure_branch_rva": "0x48073a",
+    "queue_holder_creation_rva": "0x2213a60"
+  },
+  "candidate_test_patch": {
+    "status": "applied-and-game-tested-at-4k; reported reproduction passes",
+    "change": "stealth atlas dimensions only; requested 32 slots unchanged",
+    "width_immediate_rva": "0x2213531",
+    "height_immediate_rva": "0x2213538",
+    "expected_float": 1024,
+    "test_float": 2048,
+    "expected_bytes": "00 00 80 44",
+    "replacement_bytes": "00 00 00 45"
+  },
+  "qualification": "Atlas-only enlargement resolves the reported 4K reproduction with 16 NPCs plus the manually toggled camera. RED4ext confirms the two atlas constants were patched, and the camera remains under StealthMappins_VirtualWindow across repeated untag/retag operations. This validates this reproduction, not every device type, scene, resolution, or future game build.",
+  "validation": {
+    "4K_unpatched": "17th internal tag can strand the marker in WorldMappins_QueueHolder",
+    "1080p_unpatched": "16 NPCs plus camera remain under StealthMappins_VirtualWindow across repeated untag/retag",
+    "4K_patched": "RED4ext confirms atlas-only patch; 16 NPCs plus camera remain under StealthMappins_VirtualWindow across repeated untag/retag; user confirmed visible behavior"
+  }
+}

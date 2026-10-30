@@ -1,0 +1,10 @@
+Tag Marker Atlas Fix
+Copyright (c) 2026 Shaydera. Project code: MIT; see LICENSE.
+
+src/red4ext_api.h is a minimal C translation of public RED4ext.SDK API v1
+structure declarations. RED4ext.SDK copyright (c) 2020 - present Octavian Dima.
+Its MIT license is retained in third_party/RED4ext.SDK.LICENSE.txt.
+Source: https://github.com/WopsS/RED4ext.SDK/tree/master/include/RED4ext/Api/v1
+
+No Cyberpunk 2077 executable, game asset, SDK binary, or game log is included.
+RED4ext and Cyberpunk 2077 are not included in this project.

@@ -1,0 +1,13 @@
+/build/
+/dist/
+/package/
+__pycache__/
+*.py[cod]
+*.dll
+*.exe
+*.o
+*.obj
+*.lib
+*.pdb
+*.ilk
+*.exp
