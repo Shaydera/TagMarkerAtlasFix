@@ -114,6 +114,8 @@ class NativePlugin(unittest.TestCase):
         info=PluginInfo();self.dll.Query(C.byref(info))
         self.assertEqual(info.name,'Tag Marker Atlas Fix')
         self.assertEqual(info.author,'Shaydera')
+        self.assertEqual((info.version.major,info.version.minor,info.version.patch),(1,0,0))
+        self.assertEqual(tuple(info.version.prerelease),(0,0))
         self.assertEqual((info.sdk.major,info.sdk.minor,info.sdk.patch),(1,0,0))
         self.assertEqual((info.runtime.major,info.runtime.minor,info.runtime.build,info.runtime.revision),(3,0,88,46235))
 

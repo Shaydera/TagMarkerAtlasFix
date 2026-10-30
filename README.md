@@ -15,6 +15,8 @@ The game's request for **32 marker slots** is unchanged. This is an atlas-capaci
 
 ## Installation
 
+For Vortex, import `TagMarkerAtlasFix-1.0.0.zip`, install and enable the mod, then deploy. The archive uses the canonical `red4ext/plugins/TagMarkerAtlasFix/` layout. For manual installation:
+
 1. Close the game completely.
 2. Extract the package's `red4ext` directory into your game directory.
 3. Confirm this file exists:
@@ -59,7 +61,7 @@ The build runs **45 core checks** and **10 DLL integration tests** before creati
 
 ```text
 build/TagMarkerAtlasFix.dll
-dist/TagMarkerAtlasFix-0.1.0.zip
+dist/TagMarkerAtlasFix-1.0.0.zip
 ```
 
 The ZIP contains the DLL, README, licenses, attribution and a manifest with the DLL's SHA-256. No compiled binaries are tracked in Git.

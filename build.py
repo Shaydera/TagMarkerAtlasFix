@@ -37,9 +37,9 @@ package=build/'package'/'red4ext'/'plugins'/'TagMarkerAtlasFix'
 package.mkdir(parents=True,exist_ok=True)
 for source in [dll,ROOT/'README.md',ROOT/'LICENSE',ROOT/'NOTICE',ROOT/'third_party/RED4ext.SDK.LICENSE.txt']:
     shutil.copyfile(source,package/source.name)
-manifest={'name':'Tag Marker Atlas Fix','native_plugin_identity':'Tag Marker Atlas Fix','version':'0.1.0','status':'experimental standalone snapshot; reported 4K reproduction validated','dll_sha256':hashlib.sha256(dll.read_bytes()).hexdigest(),'game_file_version':'3.0.88.46235','pe_timestamp':'0x6ad55daf','image_size':'0x581b000','verified_patch_rva':'0x221352e','change':'Stealth atlas 1024x1024 to 2048x2048; requested slots remain 32','local_verification':'45 core checks and 10 synthetic DLL lifecycle tests passed'}
+manifest={'name':'Tag Marker Atlas Fix','native_plugin_identity':'Tag Marker Atlas Fix','version':'1.0.0','status':'release; reported 4K reproduction validated','dll_sha256':hashlib.sha256(dll.read_bytes()).hexdigest(),'game_file_version':'3.0.88.46235','pe_timestamp':'0x6ad55daf','image_size':'0x581b000','verified_patch_rva':'0x221352e','change':'Stealth atlas 1024x1024 to 2048x2048; requested slots remain 32','local_verification':'45 core checks and 10 synthetic DLL lifecycle tests passed'}
 (package/'manifest.json').write_text(json.dumps(manifest,indent=2)+chr(10),encoding='utf-8')
-archive=dist/'TagMarkerAtlasFix-0.1.0.zip'
+archive=dist/'TagMarkerAtlasFix-1.0.0.zip'
 with zipfile.ZipFile(archive,'w',zipfile.ZIP_DEFLATED) as z:
     for file in sorted(package.iterdir()):
         z.write(file,file.relative_to(build/'package').as_posix())

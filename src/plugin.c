@@ -21,7 +21,7 @@ EXPORT void Query(PluginInfo *info) {
     SetSemVer(&info->sdk,1,0,0);
     info->name=L"Tag Marker Atlas Fix";
     info->author=L"Shaydera";
-    SetSemVer(&info->version,0,1,0);
+    SetSemVer(&info->version,1,0,0);
     info->runtime.major=3; info->runtime.minor=0; info->runtime.build=88; info->runtime.revision=46235;
 }
 static uint8_t *FindSite(uint8_t *image,Logger *log,PluginHandle handle) {
